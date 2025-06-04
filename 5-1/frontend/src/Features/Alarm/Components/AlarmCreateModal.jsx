@@ -1,11 +1,24 @@
-import React from 'react'
+import React from "react";
+import { useThemeStore } from "../../../Shared/Stores/ThemeStore";
+import {
+  ModalContainer,
+  ModalHeader,
+} from "../../../Shared/Utils/ModalUtils";
 
 const AlarmCreateModal = ({ isOpen, onClose }) => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const { isDark } = useThemeStore();
 
-export default AlarmCreateModal
+  const handleClose = () => {
+    onClose();
+  };
+
+  return (
+    <>
+      <ModalContainer isOpen={isOpen}>
+        <ModalHeader title="새 알람 추가" onClose={handleClose} />
+      </ModalContainer>
+    </>
+  );
+};
+
+export default AlarmCreateModal;

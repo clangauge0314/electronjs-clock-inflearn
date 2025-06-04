@@ -1,0 +1,48 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "GoodClock",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac",
+    "dist:linux": "electron-builder --linux",
+    "dist:all": "electron-builder --all"
+  },
+  "author": {
+    "name": "dakgangjung",
+    "email": "dakgangjung122@gmail.com"
+  },
+  "homepage": "https://www.inflearn.com/users/1533664/@dakgangjung123", 
+  "license": "MIT",  
+  "build": {
+    "appId": "com.example.goodclock",
+    "productName": "GoodClock",
+    "files": [
+      "dist/**/*",
+      "index.js",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": "nsis"
+    },
+    "mac": {
+      "icon": "assets/icon.ico",
+      "target": "dmg"
+    },
+    "linux": {
+      "icon": "assets/icon.ico",
+      "target": "deb"
+    }
+  },
+  "devDependencies": {
+    "electron": "",
+    "electron-builder": ""
+  }
+}
